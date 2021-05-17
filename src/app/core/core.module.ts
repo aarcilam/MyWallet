@@ -9,15 +9,19 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
 
+import * as fromComponents from './components';
+
 @NgModule({
-  declarations: [],
+  declarations: [
+    ...fromComponents.components
+  ],
   imports: [
     CommonModule,
     HttpClientModule
-  ]
+  ],
+  exports: [...fromComponents.components]
 })
 export class CoreModule { 
   constructor(){
-    alert("holita core");
   }
- }
+}

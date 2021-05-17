@@ -8,10 +8,15 @@ DO NOT import the SharedModule into the AppModule.
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
+import * as fromComponents from './components';
+
 @NgModule({
-  declarations: [],
+  declarations: [
+    ...fromComponents.components
+  ],
   imports: [
     CommonModule
-  ]
+  ],
+  exports: [...fromComponents.components]
 })
 export class SharedModule { }
